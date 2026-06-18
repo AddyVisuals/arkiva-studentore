@@ -1,0 +1,495 @@
+body {
+    background-color: white;
+    color: black;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 40px;
+    line-height: 1.6;
+    transition: 0.3s;
+    animation: fadeIn 0.5s ease;
+}
+@keyframes fadeIn {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(10px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+
+body.dark {
+    background-color: #121212;
+    color: white;
+}
+
+
+h2 {
+
+    color: #0571e3;
+
+}
+
+a {
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+
+    display: inline-block;
+
+    transition: transform 0.3s ease;
+}
+
+a::before {
+
+    content: "→";
+
+    opacity: 0;
+
+    margin-right: 0px;
+
+    transition: all 0.3s ease;
+
+}
+
+a:hover::before {
+
+    opacity: 1;
+
+    margin-right: 8px;
+
+
+
+}
+hr {
+    border: 1px solid #333;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+
+#theme-toggle {
+    position: static;
+    top: 20px;
+    right: 20px;
+
+    background-color: #1e1e1e;
+    color: white;
+
+    border: 1px solid #333;
+    border-radius: 10px;
+
+    padding: 10px 15px;
+
+    font-size: 14px;
+    cursor: pointer;
+
+    transition: 0.3s;
+    
+}
+
+#theme-toggle:hover {
+    background-color: #2a2a2a;
+    transform: translateY(-2px);
+}
+
+
+
+
+
+body.dark #theme-toggle {
+    background-color: white;
+    color: black;
+    border: 1px solid #ccc;
+}
+
+#overlay {
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.55);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 9999;
+
+    backdrop-filter: blur(5px);
+}
+
+#popup {
+    background: white;
+
+    max-width: 500px;
+
+    padding: 30px;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.25);
+
+    text-align: center;
+
+    animation: popupAppear 0.35s ease;
+}
+
+body.dark #popup {
+    background: #1f1f1f;
+    color: white;
+}
+
+#dismiss-btn {
+    margin-top: 20px;
+
+    padding: 12px 24px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #2563eb;
+
+    color: white;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+#dismiss-btn:hover {
+    background: #1d4ed8;
+
+    transform: translateY(-2px);
+}
+
+@keyframes popupAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+
+.courses-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+
+
+.card {
+    width: 300px;
+    
+
+    padding: 20px;
+
+    border-radius: 16px;
+
+    background: rgba(255,255,255,0.8);
+
+    box-shadow:
+        0 4px 15px rgba(0,0,0,0.08);
+
+    text-decoration: none;
+    color: inherit;
+
+    transition: all 0.3s ease;
+}
+
+
+.card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 10px 30px rgba(37,99,235,0.15);
+}
+
+
+body.dark .card {
+    background: #1e1e1e;
+    border: 1px solid #333;
+
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+body.dark .card:hover {
+    background: #252525;
+
+    box-shadow:
+        0 10px 30px rgba(96, 165, 250, 0.18);
+}
+
+
+input {
+    width: 150px;
+
+    padding: 12px;
+
+    border-radius: 12px;
+
+    border: 1px solid #d1d5db;
+
+    font-size: 16px;
+
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+
+    border-color: #3b82f6;
+
+    box-shadow:
+        0 0 0 4px rgba(59,130,246,0.15);
+}
+
+button {
+    background: #2563eb;
+
+    color: white;
+
+    border: none;
+
+    padding: 12px 24px;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+
+    background: #1d4ed8;
+}
+
+.grades {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+    flex-wrap: nowrap;
+}
+
+.calculator-card {
+    background: rgba(255,255,255,0.8);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    max-width: 1000px;
+    margin: 0 auto;
+    height: auto;
+}
+
+input {
+
+    width: 120px;
+
+}
+
+.page-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 20px;
+}
+#result {
+
+    max-height: 0;
+
+    opacity: 0;
+
+    overflow: hidden;
+
+    margin: 0;
+
+    font-weight: bold;
+
+    transition:
+
+        max-height 0.5s ease,
+
+        opacity 0.5s ease,
+
+        margin-top 0.5s ease;
+
+}
+
+#result.show {
+
+    max-height: 100px;
+
+    opacity: 1;
+
+    margin-top: 20px;
+
+}
+
+
+
+body.dark .calculator-card {
+    background: #1e1e1e;
+    color: white;
+    border: 1px solid #333;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+}
+
+body.dark input {
+    background: #121212;
+    color: white;
+    border: 1px solid #444;
+}
+
+body.dark input::placeholder {
+    color: #aaa;
+}
+
+body.dark .back-link {
+    color: #93c5fd;
+}
+
+
+.navbar {
+
+   display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+}
+
+.nav-right {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+}
+
+
+
+.logo {
+    font-size: 1.2rem;
+
+    font-weight: bold;
+}
+
+
+.search-bar {
+
+  width: 700px;
+
+    padding: 12px 18px;
+
+    border-radius: 999px;
+
+    border: 1px solid #d1d5db;
+
+    font-size: 16px;
+
+    transition: all 0.3s ease;
+
+    flex: 1;
+
+    max-width: 900px;
+}
+
+.search-bar:focus {
+
+    outline: none;
+
+    border-color: #3b82f6;
+
+    box-shadow:
+        0 0 0 4px rgba(59,130,246,0.15);
+}
+
+
+
+body.dark .search-bar {
+
+    background: #1e1e1e;
+
+    color: white;
+
+    border-color: #444;
+}
+
+body.dark .search-bar::placeholder {
+
+    color: #aaa;
+}
+
+
+#noResults {
+    color: #ef4444;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+body.dark #noResults {
+    color: #ff6b6b;
+}
+
+
+.nav-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+.section-title {
+    margin-top: 60px;
+    margin-bottom: 20px;
+}
+
+.section-title::after {
+
+    content: "";
+
+    display: block;
+
+    width: 80px;
+
+    height: 4px;
+
+    background: #2563eb;
+
+    margin-top: 10px;
+
+    border-radius: 999px;
+
+}
