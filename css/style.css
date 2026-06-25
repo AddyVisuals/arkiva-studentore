@@ -5,9 +5,15 @@ body {
     margin: 0;
     padding: 40px;
     line-height: 1.6;
-    transition: 0.3s;
-    animation: fadeIn 0.5s ease;
+        transition:
+        background-color 0.3s ease,
+
+        color 0.3s ease;
 }
+
+
+
+
 @keyframes fadeIn {
 
     from {
@@ -36,10 +42,9 @@ body.dark {
 }
 
 
-h2 {
 
-    color: #0571e3;
-
+.popuplabel {
+    color: white;
 }
 
 a {
@@ -74,7 +79,7 @@ a:hover::before {
 
 }
 hr {
-    border: 1px solid #333;
+    border: 1px solid #33333359;
 }
 
 ul {
@@ -91,9 +96,9 @@ ul {
     color: white;
 
     border: 1px solid #333;
-    border-radius: 10px;
+    border-radius: 4px;
 
-    padding: 10px 15px;
+    padding: 10px 10px;
 
     font-size: 14px;
     cursor: pointer;
@@ -122,7 +127,7 @@ body.dark #theme-toggle {
 
     inset: 0;
 
-    background: rgba(0, 0, 0, 0.55);
+    background: rgba(0, 0, 0, 0.192);
 
     display: flex;
     justify-content: center;
@@ -130,7 +135,7 @@ body.dark #theme-toggle {
 
     z-index: 9999;
 
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(3px);
 }
 
 #popup {
@@ -138,9 +143,10 @@ body.dark #theme-toggle {
 
     max-width: 500px;
 
-    padding: 30px;
+     border: 1px solid #ffffff11;
+    padding: 20px;
 
-    border-radius: 16px;
+    border-radius: 8px;
 
     box-shadow:
         0 15px 40px rgba(0, 0, 0, 0.25);
@@ -162,11 +168,13 @@ body.dark #popup {
 
     border: none;
 
-    border-radius: 10px;
+    border-radius: 4px;
 
-    background: #2563eb;
+    background: #ffffff;
 
-    color: white;
+    color: rgb(0, 0, 0);
+
+    font-family: Arial, Helvetica, sans-serif;
 
     cursor: pointer;
 
@@ -175,7 +183,8 @@ body.dark #popup {
 
 #dismiss-btn:hover {
     background: #1d4ed8;
-
+    color: white;
+        padding: 20px 24px;
     transform: translateY(-2px);
 }
 
@@ -204,15 +213,15 @@ body.dark #popup {
 .card {
     width: 300px;
     
+    border: 1px solid rgba(0, 0, 0, 0.091);
 
-    padding: 20px;
+    padding: 15px;
 
-    border-radius: 16px;
+    border-radius: 10px;
 
     background: rgba(255,255,255,0.8);
 
-    box-shadow:
-        0 4px 15px rgba(0,0,0,0.08);
+    box-shadow: 0 1px 5px rgba(0,0,0,0.08);
 
     text-decoration: none;
     color: inherit;
@@ -224,14 +233,13 @@ body.dark #popup {
 .card:hover {
     transform: translateY(-5px);
 
-    box-shadow:
-        0 10px 30px rgba(37,99,235,0.15);
+    border: 1px solid rgb(17, 27, 222);
 }
 
 
 body.dark .card {
     background: #1e1e1e;
-    border: 1px solid #333;
+    border: 1px solid #ffffff42;
 
     box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
@@ -239,8 +247,8 @@ body.dark .card {
 body.dark .card:hover {
     background: #252525;
 
-    box-shadow:
-        0 10px 30px rgba(96, 165, 250, 0.18);
+
+    border: 1px solid rgb(64, 72, 234);
 }
 
 
@@ -412,7 +420,7 @@ body.dark .back-link {
 
     padding: 12px 18px;
 
-    border-radius: 999px;
+    border-radius: 6px;
 
     border: 1px solid #d1d5db;
 
@@ -429,7 +437,7 @@ body.dark .back-link {
 
     outline: none;
 
-    border-color: #3b82f6;
+    border-color: #0960ed;
 
     box-shadow:
         0 0 0 4px rgba(59,130,246,0.15);
@@ -472,26 +480,8 @@ body.dark #noResults {
 }
 
 .section-title {
-    margin-top: 60px;
+    margin-top: 30px;
     margin-bottom: 20px;
-}
-
-.section-title::after {
-
-    content: "";
-
-    display: block;
-
-    width: 80px;
-
-    height: 4px;
-
-    background: #2563eb;
-
-    margin-top: 10px;
-
-    border-radius: 999px;
-
 }
 
 
@@ -558,19 +548,17 @@ body.dark #noResults {
     }
 
 
-    .grades {
-
-        display: flex;
+     .grades {
 
         flex-direction: column;
 
-        gap: 15px;
+        flex-wrap: nowrap;
 
     }
 
     .grades input {
 
-        width: 100% !important;
+        width: 100%;
 
         box-sizing: border-box;
 
@@ -578,11 +566,70 @@ body.dark #noResults {
 
     .calculator-card {
 
-        width: 100%;
-
-        box-sizing: border-box;
-
         padding: 24px;
 
     }
+
+    .calculator-card h1 {
+
+        font-size: 2.4rem;
+
+        line-height: 1.15;
+
+    }
+}
+
+.top-header {
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+
+    background: rgba(255,255,255,0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    padding: 20px 0;
+
+    position: sticky;
+
+     transition:
+
+        background-color 0.3s ease,
+
+        border-color 0.3s ease,
+
+        box-shadow 0.3s ease;
+}
+
+.top-header::after {
+    content: "";
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 1px;
+
+    background: linear-gradient(
+        to right,
+        transparent,
+        rgba(0,0,0,0.18) 15%,
+        rgba(0,0,0,0.18) 85%,
+        transparent
+    );
+}
+
+body.dark .top-header {
+    background: rgba(18, 18, 18, 0.75);
+}
+
+body.dark .top-header::after {
+    background: linear-gradient(
+        to right,
+        transparent,
+        rgba(255,255,255,0.15) 15%,
+        rgba(255,255,255,0.15) 85%,
+        transparent
+    );
 }
